@@ -25,6 +25,7 @@ const Product = () => {
             >
               Add to Cart
             </button>
+            {console.log(productToRender.id)}
             <p className='prod-price'>${productToRender.price}</p>
           </div>
         </div>

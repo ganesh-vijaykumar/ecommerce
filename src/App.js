@@ -2,7 +2,18 @@ import './App.css'
 import image from './furniture.jpg'
 import { Link } from 'react-router-dom'
 import React from 'react'
-import { itemsToFeature } from './index'
+import productList from './productList'
+
+let itemsToFeature = []
+
+let x = 0
+do {
+  const item = Math.floor(Math.random() * (productList.length - 1))
+  if (!itemsToFeature.includes(productList[item])) {
+    x++
+    itemsToFeature.push(productList[item])
+  }
+} while (x < 3)
 
 function App() {
   return (
@@ -41,4 +52,4 @@ function App() {
   )
 }
 
-export default App
+export const Memoized = React.memo(App)

@@ -2,17 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './navbar'
-import App from './App'
+import { Memoized } from './App'
 import Products from './products'
 import About from './about'
 import Cart from './cart'
 import Error from './error'
 import Product from './product'
 import { reducer } from './reducer'
-import productList from './productList'
 
 export const context = React.createContext()
-export let itemsToFeature = []
 
 const defaultState = {
   cart: [],
@@ -43,15 +41,6 @@ const HomePage = () => {
     dispatch({ type: 'DECREMENT', payload: id })
   }
 
-  let x = 0
-  do {
-    const item = Math.floor(Math.random() * (productList.length - 1))
-    if (!itemsToFeature.includes(productList[item])) {
-      x++
-      itemsToFeature.push(productList[item])
-    }
-  } while (x < 3)
-
   return (
     <context.Provider
       value={{
@@ -67,7 +56,7 @@ const HomePage = () => {
         <Navbar />
         <Switch>
           <Route exact path='/'>
-            <App />
+            <Memoized />
           </Route>
           <Route exact path='/products'>
             <Products />
