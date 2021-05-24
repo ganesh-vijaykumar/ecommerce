@@ -137,6 +137,7 @@ const Products = () => {
                     </div>
                   </Link>
                 )
+              return
             })}
           </div>
         </div>

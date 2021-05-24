@@ -41,6 +41,7 @@ export const reducer = (state, action) => {
         if (item.id !== action.payload) {
           newCart.push(item)
         }
+        return
       })
       return {
         cart: newCart,
