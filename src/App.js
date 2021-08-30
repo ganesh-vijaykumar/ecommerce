@@ -26,6 +26,7 @@ function App() {
           href='https://www.freepik.com/photos/house'
           target='_blank'
           rel='noreferrer'
+          id='banner-img'
         >
           <img src={image} alt='furniture' />
           <p className='credits'>

@@ -20,6 +20,10 @@
   height: 350px;
 }
 
+#banner-img {
+  width: 100%;
+}
+
 .credits {
   position: absolute;
   bottom: 5px;
